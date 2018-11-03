@@ -1,0 +1,26 @@
+//Script to check that the results of a basic mathematical calculus with the - operator gives the right result
+
+//Creation of a Chrome instance:
+my_bro = Browser("Chrome")
+
+//Get the text to submit
+query = "2011-2018"
+
+//Calculation of the query
+number = calculate(query)
+
+//Query with the browser on google
+SearchGoogle(my_bro, query)
+
+//Get the result of the calculus
+result = parsefloat(my_bro.SearchItem("cwos"))
+
+//Check the validity
+check = (result == number)
+
+//Display of the result
+If check then 
+  display("Google is a good subtractor") 
+else 
+  display("Google can't even do a subtraction...")
+end if
