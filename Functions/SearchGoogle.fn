@@ -1,0 +1,11 @@
+//This function performs a search on google with the browser (of the browser class) specified
+SearchGoogle(browser, query){
+	//Navigation to google
+	browser.Goto("www.google.com")
+	
+	//Get to the query field
+	querybox = browser.SearchItem("lst_ib")
+	
+	//Submit the query
+	querybox.Submit(query)
+}
