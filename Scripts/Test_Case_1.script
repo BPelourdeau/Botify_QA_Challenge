@@ -1,0 +1,25 @@
+//Script to make a query on google and check that the resulting page has 10 items
+
+//Creation of a Chrome instance:
+my_bro = Browser("Chrome")
+
+//Get the text to submit
+query = "javascript site: openclassrooms.com"
+
+//Extract the argument in the query
+site = extract(query)
+
+//Query with the browser on google
+SearchGoogle(my_bro, query)
+
+//Get the list of results
+results = my_bro.SearchTheItems("LC201b")
+
+//Checking if all the items in the list contain the "site"
+check = find_in_list(site, results)
+
+//Display of the result
+If check then 
+  display("All results are in " + site) 
+else 
+  display("There are some results that are not in " + site + "!")
