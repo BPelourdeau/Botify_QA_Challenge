@@ -1,0 +1,26 @@
+//Script to check that the results of a search with "inurl:" in the query have a url that contains the query
+
+//Creation of a Chrome instance:
+my_bro = Browser("Chrome")
+
+//Get the text to submit
+query = "inurl: gouv.fr"
+
+//Extract the argument in the query
+content = extract_after(query, "inurl: ")
+
+//Query with the browser on google
+SearchGoogle(my_bro, query)
+
+//Get the list of results but only the part that display the type of file
+results = my_bro.SearchTheItems("iUh30")
+
+//Check that all the results have the argument "content" in their url
+check = find_in_list(content, results)
+
+//Display of the result
+If check then 
+  display("All results have " + content + " in their url") 
+else 
+  display("Some results don't have " + content + " in their url")
+end if
