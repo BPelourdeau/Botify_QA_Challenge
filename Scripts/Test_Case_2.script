@@ -1,0 +1,31 @@
+//Script to check that the results of a search with "filetype:" in the query have the right extension
+
+//Creation of a Chrome instance:
+my_bro = Browser("Chrome")
+
+//Get the text to submit
+query = "javascript tuto filetype: pdf"
+
+//Extract the argument in the query
+site = extract_after(query, "filetype: ")
+
+//Query with the browser on google
+SearchGoogle(my_bro, query)
+
+//Get the list of results but only the part that display the type of file
+results = my_bro.SearchTheItems("sFZIhb b w xsm")
+
+//First check to see if all the results have an extension noted
+check = (results.length == 10)
+
+//Then check that all the extensions are ok
+if check then
+  check = find_in_list(filetype, results)
+end if
+
+//Display of the result
+If check then 
+  display("All results have the right file extension") 
+else 
+  display("Some of the results don't have the right file extension !")
+end if

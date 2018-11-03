@@ -1,7 +1,0 @@
-//This function will extract the substring after "site: "
-import Strings.something
-
-extract(text){
-  site = strip(substring(text, findlast(text, "site: "), text.length))
-  return site
-}
