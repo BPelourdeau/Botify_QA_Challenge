@@ -1,0 +1,26 @@
+//This function calculates the expression passed in argument using basic string manipulation
+import Strings.something
+
+calculate(expr){
+  if found(expr, "+") then
+    numbers = split(expr, "+")
+    number = parsefloat(numbers[0]) + parsefloat(numbers[1])
+  else if found(expr, "-") then
+    numbers = split(expr, "-")
+    number = parsefloat(numbers[0]) - parsefloat(numbers[1])
+  else if found(expr, "*") then
+    numbers = split(expr, "*")
+    number = parsefloat(numbers[0]) * parsefloat(numbers[1])
+  else if found(expr, "/") then
+    numbers = split(expr, "/")
+    number = parsefloat(numbers[0]) / parsefloat(numbers[1])
+  else if found(expr, "% of") then
+    number1 = substring(expr, 0, find(expr, "% of"))
+    number2 = substring(expr, findlast(expr, "% of")+1, expr.length)    
+    number = parsefloat(number1) * parsefloat(number2) / 100
+  else
+	number = 0
+  end if
+  
+  return number
+}
