@@ -7,7 +7,7 @@ my_bro = Browser("Chrome")
 query = "javascript site: openclassrooms.com"
 
 //Extract the argument in the query
-site = extract(query)
+site = extract_argument(query) //was not functioning before, because of the update of the extract function, OK now
 
 //Query with the browser on google
 SearchGoogle(my_bro, query)

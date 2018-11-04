@@ -5,3 +5,17 @@ extract_after(text, argument_type){
   argument = strip(substring(text, findlast(text, argument_type), text.length))
   return argument
 }
+
+//Function to recognize arguments of known keywords
+extract_argument(text){
+	if found(text, "site:") then
+		argument = extract_after(text, "site:")
+	else if found(text, "filetype:") then
+		argument = extract_after(text, "filetype:")
+	else if found(text, "inurl:") then
+		argument = extract_after(text, "inurl:")
+	else
+		argument = text
+	end if
+	return argument
+}

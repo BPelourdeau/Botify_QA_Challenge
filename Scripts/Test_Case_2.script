@@ -7,7 +7,7 @@ my_bro = Browser("Chrome")
 query = "javascript tuto filetype: pdf"
 
 //Extract the argument in the query
-site = extract_after(query, "filetype: ")
+filetype = extract_argument(query)
 
 //Query with the browser on google
 SearchGoogle(my_bro, query)

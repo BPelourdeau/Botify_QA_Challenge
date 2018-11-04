@@ -7,7 +7,7 @@ my_bro = Browser("Chrome")
 query = "inurl: gouv.fr"
 
 //Extract the argument in the query
-content = extract_after(query, "inurl: ")
+content = extract_argument(query)
 
 //Query with the browser on google
 SearchGoogle(my_bro, query)
